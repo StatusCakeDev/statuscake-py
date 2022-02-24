@@ -1,5 +1,5 @@
-statuscake-py
-=============
+statuscake-py |build|
+=====================
 
 **NOTE**: This library is in alpha and not production ready. Whilst it can be
 used we will not offer support until it is generally available.
@@ -82,3 +82,5 @@ License
 -------
 
 This project is licensed under the `MIT License <LICENSE.txt>`_.
+
+.. |build| image:: https://github.com/StatusCakeDev/statuscake-py/workflows/test/badge.svg

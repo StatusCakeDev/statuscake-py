@@ -1,0 +1,39 @@
+name: test
+on:
+  pull_request:
+  push:
+    branches:
+    - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python:
+        - "3,10"
+        - "3.9"
+        - "3.8"
+        include:
+        - python: "3.10"
+          publish: true
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python }}
+        cache: "npm"
+    - uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - run: pip install .[test]
+    - run: pytest
+    - if: ${{ matrix.publish }}
+      run: pact:publish
+      env:
+        PACT_BROKER_BASE_URL: "https://statuscake.pact.dius.com.au"
+        PACT_BROKER_TOKEN: ${{ secrets.PACT_BROKER_TOKEN }}
+        PACT_CONSUMER_APP_VERSION: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        PACT_TAG: ${{ github.event_name == 'pull_request' && github.head_ref || 'master' }}
