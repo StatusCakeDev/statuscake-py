@@ -1,8 +1,12 @@
 statuscake-py
 =============
 
-This README outlines the details of collaborating on this Python module. A
-short introduction of this module could easily go here.
+**NOTE**: This library is in alpha and not production ready. Whilst it can be
+used we will not offer support until it is generally available.
+
+The Python implementation of the `StatusCake API
+<https://www.statuscake.com/api/v1>`_ client. Documentation for this library
+can be found `here <https://www.statuscake.com/api/v1>`_.
 
 Prerequisites
 -------------
