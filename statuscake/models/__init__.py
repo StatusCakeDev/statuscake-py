@@ -15,6 +15,7 @@ from statuscake.model.api_response_data import APIResponseData
 from statuscake.model.contact_group import ContactGroup
 from statuscake.model.contact_group_response import ContactGroupResponse
 from statuscake.model.contact_groups import ContactGroups
+from statuscake.model.links import Links
 from statuscake.model.maintenance_window import MaintenanceWindow
 from statuscake.model.maintenance_window_repeat_interval import MaintenanceWindowRepeatInterval
 from statuscake.model.maintenance_window_response import MaintenanceWindowResponse
@@ -27,17 +28,13 @@ from statuscake.model.monitoring_locations import MonitoringLocations
 from statuscake.model.pagespeed_test import PagespeedTest
 from statuscake.model.pagespeed_test_check_rate import PagespeedTestCheckRate
 from statuscake.model.pagespeed_test_history import PagespeedTestHistory
-from statuscake.model.pagespeed_test_history_data import PagespeedTestHistoryData
-from statuscake.model.pagespeed_test_history_data_aggregated import PagespeedTestHistoryDataAggregated
-from statuscake.model.pagespeed_test_history_data_aggregated_filesize import PagespeedTestHistoryDataAggregatedFilesize
-from statuscake.model.pagespeed_test_history_data_aggregated_loadtime import PagespeedTestHistoryDataAggregatedLoadtime
-from statuscake.model.pagespeed_test_history_data_aggregated_requests import PagespeedTestHistoryDataAggregatedRequests
-from statuscake.model.pagespeed_test_region import PagespeedTestRegion
 from statuscake.model.pagespeed_test_history_result import PagespeedTestHistoryResult
+from statuscake.model.pagespeed_test_region import PagespeedTestRegion
 from statuscake.model.pagespeed_test_response import PagespeedTestResponse
 from statuscake.model.pagespeed_test_stats import PagespeedTestStats
 from statuscake.model.pagespeed_test_throttling import PagespeedTestThrottling
 from statuscake.model.pagespeed_tests import PagespeedTests
+from statuscake.model.pagination import Pagination
 from statuscake.model.ssl_test import SSLTest
 from statuscake.model.ssl_test_check_rate import SSLTestCheckRate
 from statuscake.model.ssl_test_flags import SSLTestFlags
