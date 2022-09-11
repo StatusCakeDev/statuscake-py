@@ -1,0 +1,21 @@
+name: publish
+on:
+  release:
+    types:
+    - published
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+        cache: "pip"
+    - name: Publish to PyPi
+      run: |
+        python3 -m pip install --upgrade build
+        python3 -m build
+    uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        password: ${{ secrets.PYPI_API_TOKEN }}
