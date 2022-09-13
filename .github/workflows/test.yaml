@@ -13,33 +13,17 @@ jobs:
         - "3.10"
         - "3.9"
         - "3.8"
-        include:
-        - python: "3.10"
-          publish: true
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python }}
-        cache: "npm"
+        cache: "pip"
     - uses: actions/cache@v2
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
-    - run: pip install .[test]
-    - run: pytest
-    - if: ${{ matrix.publish }}
-      uses: docker://pactfoundation/pact-cli
-      with:
-        # GitHub actions messes with the HOME environment variable and this
-        # causes the step to fail. Here we're bypassing the default entrypoint
-        # and calling pact directly.
-        entrypoint: bundle
-        args: exec /pact/bin/pact publish pacts --consumer-app-version ${PACT_CONSUMER_APP_VERSION} --tag ${PACT_TAG}
-      env:
-        PACT_BROKER_BASE_URL: "https://statuscake.pactflow.io"
-        PACT_BROKER_TOKEN: ${{ secrets.PACT_BROKER_TOKEN }}
-        PACT_CONSUMER_APP_VERSION: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
-        PACT_TAG: ${{ github.event_name == 'pull_request' && github.head_ref || 'master' }}
+    - run: pip install tox==3.26.0
+    - run: tox
