@@ -16,6 +16,6 @@ jobs:
       run: |
         python3 -m pip install --upgrade build
         python3 -m build
-    uses: pypa/gh-action-pypi-publish@release/v1
+    - uses: pypa/gh-action-pypi-publish@release/v1
       with:
         password: ${{ secrets.PYPI_API_TOKEN }}
