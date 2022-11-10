@@ -62,11 +62,6 @@ request:
 
    from statuscake import ApiClient
    from statuscake.apis import (
-       ContactGroupApu,
-       LocationsApi,
-       MaintenanceWindowsApi,
-       PagespeedApi,
-       SslApi,
        UptimeApi,
    )
 
