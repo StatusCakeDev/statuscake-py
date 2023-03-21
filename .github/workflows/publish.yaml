@@ -6,7 +6,7 @@ on:
     - published
 jobs:
   publish:
-    name: Publish to PyPi
+    name: Publish to PyPI
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -14,7 +14,7 @@ jobs:
       with:
         python-version: "3.10"
         cache: pip
-    - name: Publish to PyPi
+    - name: Publish to PyPI
       run: |
         python3 -m pip install --upgrade build
         python3 -m build
