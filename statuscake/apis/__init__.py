@@ -15,6 +15,7 @@
 
 # Import APIs into API package:
 from statuscake.api.contact_groups_api import ContactGroupsApi
+from statuscake.api.heartbeat_api import HeartbeatApi
 from statuscake.api.locations_api import LocationsApi
 from statuscake.api.maintenance_windows_api import MaintenanceWindowsApi
 from statuscake.api.pagespeed_api import PagespeedApi

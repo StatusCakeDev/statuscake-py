@@ -15,6 +15,11 @@ from statuscake.model.api_response_data import APIResponseData
 from statuscake.model.contact_group import ContactGroup
 from statuscake.model.contact_group_response import ContactGroupResponse
 from statuscake.model.contact_groups import ContactGroups
+from statuscake.model.heartbeat_test import HeartbeatTest
+from statuscake.model.heartbeat_test_overview import HeartbeatTestOverview
+from statuscake.model.heartbeat_test_response import HeartbeatTestResponse
+from statuscake.model.heartbeat_test_status import HeartbeatTestStatus
+from statuscake.model.heartbeat_tests import HeartbeatTests
 from statuscake.model.links import Links
 from statuscake.model.maintenance_window import MaintenanceWindow
 from statuscake.model.maintenance_window_repeat_interval import MaintenanceWindowRepeatInterval
