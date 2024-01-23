@@ -42,10 +42,22 @@ jobs:
         node-version: 19.x
     - name: Install base config
       run: npm install @commitlint/config-conventional
-    - name: Validate all commits
+    - name: Validate commit messages
       run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to HEAD --verbose
-  yamllint:
-    name: Lint YAML documents
+  restructuredtext-style:
+    name: Check ReStructuredText style
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+    - name: Install rstcheck
+      run: pip install --user rstcheck
+    - name: Validate ReStructuredText
+      run: rstcheck --report-level warning --recursive .
+  yaml-style:
+    name: Check YAML style
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -54,5 +66,5 @@ jobs:
         python-version: "3.10"
     - name: Install yamllint
       run: pip install --user yamllint
-    - name: Lint
+    - name: Validate YAML
       run: yamllint .
