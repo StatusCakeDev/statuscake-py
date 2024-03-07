@@ -41,9 +41,10 @@ VERSION = '1.2.0-beta.1'
 # http://pypi.python.org/pypi/setuptools
 
 REQUIRES = [
-    'urllib3~=1.25.3',
-    'python-dateutil~=2.5.3',
+    'urllib3~=1.26.18',
+    'python-dateutil~=2.9.0',
 ]
+
 
 TESTS_REQUIRE = [
     'pytest~=7.1.3',
