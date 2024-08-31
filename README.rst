@@ -11,9 +11,9 @@ can be found `here <https://www.statuscake.com/api/v1>`_.
 Prerequisites
 -------------
 
-You will need the following things properly installed on your computer.
+You will need the following things properly installed on your computer:
 
-* `Python <https://www.python.org/>`_: any one of the **three latest major**
+- `Python <https://www.python.org/>`_: any one of the **three latest major**
   `releases <https://www.python.org/download/releases/3.0/>`_
 
 Installation
@@ -33,13 +33,13 @@ And then execute:
 
 .. code:: bash
 
-    $ pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Or install it yourself:
 
 .. code:: bash
 
-    $ pip install statuscake_py
+    pip install statuscake_py
 
 GitHub
 ------
@@ -48,9 +48,9 @@ Installing the latest version from Github:
 
 .. code:: bash
 
-    $ git clone https://github.com/StatusCakeDev/statuscake-py
-    $ cd statuscake-py
-    $ python setup.py install
+    git clone https://github.com/StatusCakeDev/statuscake-py
+    cd statuscake-py
+    python setup.py install
 
 Usage
 -----
