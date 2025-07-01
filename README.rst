@@ -6,7 +6,8 @@ used we will not offer support until it is generally available.
 
 The Python implementation of the `StatusCake API
 <https://www.statuscake.com/api/v1>`_ client. Documentation for this library
-can be found `here <https://www.statuscake.com/api/v1>`_.
+can be found on the `StatusCake Developer Portal
+<https://www.statuscake.com/api/v1>`_.
 
 Prerequisites
 -------------
