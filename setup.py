@@ -32,7 +32,7 @@ import codecs
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = 'statuscake_py'
-VERSION = '1.2.0-beta.1'
+VERSION = '1.2.0-beta.2'
 # To install the library, run the following
 #
 # python setup.py install
@@ -41,12 +41,12 @@ VERSION = '1.2.0-beta.1'
 # http://pypi.python.org/pypi/setuptools
 
 REQUIRES = [
-    'urllib3>=2.2.1,<2.6.0',
-    'python-dateutil~=2.5.3',
+    'urllib3>=2.2.1,<2.7.0',
+    'python-dateutil~=2.9.0',
 ]
 
 TESTS_REQUIRE = [
-    'pytest~=7.1.3',
+    "pytest~=9.0.2",
 ]
 
 
