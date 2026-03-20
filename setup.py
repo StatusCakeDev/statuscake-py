@@ -46,7 +46,7 @@ REQUIRES = [
 ]
 
 TESTS_REQUIRE = [
-    'pytest~=7.1.3',
+    "pytest~=9.0.2",
 ]
 
 
