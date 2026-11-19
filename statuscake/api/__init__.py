@@ -1,3 +1,11 @@
-# do not import all apis into this module because that uses a lot of memory and stack frames
-# if you need the ability to import all apis from one package, import them with
-# from statuscake.apis import ContactGroupsApi
+# flake8: noqa
+
+# import apis into api package
+from statuscake.api.contact_groups_api import ContactGroupsApi
+from statuscake.api.heartbeat_api import HeartbeatApi
+from statuscake.api.locations_api import LocationsApi
+from statuscake.api.maintenance_windows_api import MaintenanceWindowsApi
+from statuscake.api.pagespeed_api import PagespeedApi
+from statuscake.api.ssl_api import SslApi
+from statuscake.api.uptime_api import UptimeApi
+
