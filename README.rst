@@ -1,13 +1,10 @@
 statuscake-py |build|
 =====================
 
-**NOTE**: This library is in alpha and not production ready. Whilst it can be
-used we will not offer support until it is generally available.
-
-The Python implementation of the `StatusCake API
-<https://www.statuscake.com/api/v1>`_ client. Documentation for this library
-can be found on the `StatusCake Developer Portal
-<https://www.statuscake.com/api/v1>`_.
+The `Python <https://www.python.org/>`_ implementation of the `StatusCake API
+<https://developers.statuscake.com/api/>`_ client. Documentation for this
+library can be found on the `StatusCake Developer Portal
+<https://developers.statuscake.com/guides/sdks/introduction>`_.
 
 Prerequisites
 -------------
@@ -15,7 +12,7 @@ Prerequisites
 You will need the following things properly installed on your computer:
 
 - `Python <https://www.python.org/>`_: any one of the **three latest major**
-  `releases <https://www.python.org/download/releases/3.0/>`_
+  `releases <https://www.python.org/downloads/>`_
 
 Installation
 ------------
@@ -26,7 +23,7 @@ PyPi
 Using `PyPi <https://pypi.org/project/statuscake-py/>`_, add the following
 to ``requirement.txt``:
 
-.. code:: python
+.. code:: text
 
    statuscake_py
 
@@ -49,9 +46,7 @@ Installing the latest version from Github:
 
 .. code:: bash
 
-    git clone https://github.com/StatusCakeDev/statuscake-py
-    cd statuscake-py
-    python setup.py install
+    pip install git+https://github.com/StatusCakeDev/statuscake-py
 
 Usage
 -----
@@ -61,18 +56,30 @@ request:
 
 .. code:: python
 
-   from statuscake import ApiClient
-   from statuscake.apis import (
-       UptimeApi,
-   )
+   import os
 
-   client = ApiClient(
-      header_name='Authorization',
-      header_value='Bearer %s' % api_token,
-   )
+   from statuscake import Client, credentials, validation_errors
 
-   service = UptimeApi(api_client=client)
-   service.list_uptime_tests()
+   client = Client(credentials.Bearer(os.environ["STATUSCAKE_API_TOKEN"]))
+
+   try:
+       tests = client.uptime.list_uptime_tests()
+       print(tests.data)
+   except Exception as e:
+       print(e)
+       print(validation_errors(e))
+
+Examples
+--------
+
+The `examples <examples>`_ directory has a program for each kind of check, which
+creates, reads, updates, lists and deletes it. They create resources in your
+account, and delete them again before exiting:
+
+.. code:: bash
+
+   export STATUSCAKE_API_TOKEN=...
+   python examples/uptime.py
 
 License
 -------
