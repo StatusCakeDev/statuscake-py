@@ -40,9 +40,9 @@ class Pagination(BaseModel):
     Pagination
     """ # noqa: E501
     page: Annotated[int, Field(strict=True, ge=1)] = Field(description="The current page of results")
-    per_page: Annotated[int, Field(strict=True, ge=1)] = Field(description="The number of results per page")
+    per_page: Annotated[int, Field(strict=True, ge=0)] = Field(description="The number of results per page")
     page_count: Annotated[int, Field(strict=True, ge=1)] = Field(description="The total number of pages")
-    total_count: Annotated[int, Field(strict=True, ge=1)] = Field(description="The total number of results")
+    total_count: Annotated[int, Field(strict=True, ge=0)] = Field(description="The total number of results")
     __properties: ClassVar[List[str]] = ["page", "per_page", "page_count", "total_count"]
 
     model_config = ConfigDict(
